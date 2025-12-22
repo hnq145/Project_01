@@ -1,4 +1,7 @@
 {
   "editor.fontSize": 16,
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  "files.associations": {
+    "*.html": "html"
+  }
 }

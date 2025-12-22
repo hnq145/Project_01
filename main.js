@@ -6,8 +6,12 @@ $(document).ready(function () {
   function showFeedbackSlide(index) {
     feedbackItems.hide();
     feedbackItems.eq(index).show();
-    feedbackDots.removeClass("active");
-    feedbackDots.eq(index).addClass("active");
+    
+    // Update dots in ALL items to match the current slide index
+    feedbackItems.each(function() {
+        $(this).find(".dot").removeClass("active");
+        $(this).find(".dot").eq(index).addClass("active"); // Use index to select key dot
+    });
   }
 
   feedbackDots.click(function () {
@@ -19,8 +23,8 @@ $(document).ready(function () {
   showFeedbackSlide(0);
 
   // Blog section
-  const blogItems = $(".blog-item");
-  const blogDots = $(".blog .dot");
+  const blogItems = $(".blogs .item"); // Fixed selector
+  const blogDots = $(".blogs .dot"); // Fixed selector
 
   function showBlogSlide(index) {
     blogItems.hide();
@@ -36,4 +40,20 @@ $(document).ready(function () {
 
   // Initial display for blog
   showBlogSlide(0);
+
+  // Mobile Menu
+  const toggleMenu = $(".toggle-menu");
+  const nav = $(".nav");
+  const navOverlay = $(".nav-overlay");
+
+  toggleMenu.click(function (e) {
+    e.preventDefault();
+    nav.addClass("active");
+    navOverlay.addClass("active");
+  });
+
+  navOverlay.click(function () {
+    nav.removeClass("active");
+    navOverlay.removeClass("active");
+  });
 });
