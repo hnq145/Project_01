@@ -779,8 +779,97 @@ footer {
   margin-bottom: 12px;
 }
 
-.footer .list li:last-child a {
-  margin-bottom: 0;
+/* ... existing content ... */
+
+/* ================ Animation Keyframes ================= */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Áp dụng animation nổi cho các icon trong hero */
+.hero-sumary .icon img,
+.hero .watch-video .icon img,
+.hero .media-block .img {
+  /* Áp dụng nhẹ nhàng cho ảnh chính nếu muốn, hoặc chỉ icon */
+}
+
+/* Chỉ áp dụng cho các icon nhỏ trong thẻ tóm tắt */
+.hero-sumary .item .icon {
+  animation: floating 3s ease-in-out infinite;
+}
+.hero-sumary .item:nth-child(2) .icon {
+  animation-delay: 0.5s;
+}
+.hero-sumary .item:nth-child(3) .icon {
+  animation-delay: 1s;
+}
+
+/* ================ Modern Hover Effects ================= */
+/* Nút bấm: Scale nhẹ và bóng đổ khi hover */
+.btn,
+.hero .watch-video {
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 185, 0, 0.4);
+}
+
+/* Thẻ khóa học và Blog: Nổi lên khi hover */
+.popular .course-item,
+.blogs .item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.popular .course-item:hover,
+.blogs .item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+/* Ảnh trong card zoom nhẹ khi hover card (nếu muốn, tuỳ chọn) */
+.popular .course-item .thumb,
+.blogs .item .thumb {
+  transition: transform 0.5s ease;
+}
+.popular .course-item:hover .thumb,
+.blogs .item:hover .thumb {
+  transform: scale(
+    1.05
+  ); /* Cần overflow hidden ở thẻ cha nếu muốn ảnh không tràn */
+}
+/* Cần set overflow hidden cho thẻ chứa ảnh để hiệu ứng zoom đẹp hơn */
+.popular .course-item > a,
+.blogs .item > a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0; /* Khớp với border-radius của ảnh */
+}
+.blogs .item > a {
+  border-radius: 16px 16px 0 0;
+}
+
+/* Smooth Scrolling cho toàn trang */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Header mờ hoặc có bóng khi cuộn */
+.header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 252, 244, 0.95); /* Làm mờ nhẹ background */
+  backdrop-filter: blur(10px);
 }
 
 .footer .list strong {
