@@ -60,6 +60,7 @@ a {
 .line-camp {
   display: -webkit-box;
   -webkit-line-clamp: var(--line-clamp, 1);
+  line-clamp: var(--line-clamp, 1);
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -794,12 +795,195 @@ footer {
   }
 }
 
-/* Áp dụng animation nổi cho các icon trong hero */
-.hero-sumary .icon img,
-.hero .watch-video .icon img,
-.hero .media-block .img {
-  /* Áp dụng nhẹ nhàng cho ảnh chính nếu muốn, hoặc chỉ icon */
+/* ================= FAQ ===================== */
+.faq {
+  margin-top: 135px;
+  padding: 65px 0;
 }
+
+.faq .test {
+  max-width: 500px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.faq .test .desc {
+  margin-top: 16px;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e2dfda;
+  padding: 24px 0;
+}
+
+.faq-item .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-item .question h3 {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.faq-item .question svg {
+  transition: 0.3s;
+}
+
+.faq-item.active .question svg {
+  transform: rotate(180deg);
+}
+
+.faq-item .answer {
+  margin-top: 14px;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  display: none;
+}
+
+/* ================= Newsletter ===================== */
+.newsletter {
+  margin-top: 135px;
+  padding: 76px 0 88px;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.newsletter .body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsletter .info {
+  text-align: left;
+  width: 45%;
+}
+
+.newsletter .heading-lv2 {
+  color: #fff;
+}
+
+.newsletter .desc {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+
+.newsletter .form {
+  display: flex;
+  width: 50%;
+}
+
+.newsletter .form input {
+  flex: 1;
+  height: 60px;
+  border-radius: 99px;
+  border: none;
+  outline: none;
+  padding: 0 24px;
+  font-family: inherit;
+  font-size: 1.6rem;
+}
+
+.newsletter .form .btn {
+  height: 60px;
+  margin-top: 0;
+  margin-left: -60px;
+  background: #171100;
+  color: #fff;
+  min-width: 130px;
+  border: none;
+  cursor: pointer;
+  line-height: 60px;
+}
+
+.newsletter .form .btn:hover {
+  opacity: 0.9;
+}
+
+/* ================= Back to Top ===================== */
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 99;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* ================= Preloader ===================== */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fffcf4;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e2dfda;
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Áp dụng nhẹ nhàng cho ảnh chính nếu muốn, hoặc chỉ icon */
 
 /* Chỉ áp dụng cho các icon nhỏ trong thẻ tóm tắt */
 .hero-sumary .item .icon {
@@ -886,6 +1070,157 @@ html {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.85; /* 185.714% */
+}
+
+/* ================= Pricing ===================== */
+.pricing {
+  background-color: #f9f9f9;
+  padding: 86px 0;
+  margin-top: 135px;
+}
+
+.pricing-top {
+  margin-bottom: 55px;
+}
+
+.pricing-top .desc {
+  font-size: 1.8rem;
+  color: #5f5b53;
+  margin-top: 16px;
+  line-height: 1.67;
+}
+
+.pricing-list {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 370px;
+  border: 1px solid #e2dfda;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-10px);
+  border-color: transparent;
+}
+
+.pricing-card.popular-card {
+  border-color: var(--primary-color);
+  box-shadow: 0px 20px 40px rgba(255, 185, 0, 0.15);
+}
+
+.pricing-card .badge {
+  position: absolute;
+  top: 18px;
+  right: -32px;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 5px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transform: rotate(45deg);
+  text-transform: uppercase;
+}
+
+.pricing-card .name {
+  color: #171100;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.pricing-card .price {
+  color: #171100;
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.pricing-card .price span {
+  font-size: 1.6rem;
+  color: #5f5b53;
+  font-weight: 400;
+}
+
+.pricing-card .features-list {
+  margin: 30px 0;
+}
+
+.pricing-card .features-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #5f5b53;
+  margin-bottom: 18px;
+}
+
+.pricing-card .features-list li img {
+  margin-right: 12px;
+  width: 20px;
+}
+
+.pricing-card .btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+.pricing-card .btn-outline {
+  background: transparent;
+  border: 1px solid #171100;
+  color: #171100;
+}
+
+.pricing-card .btn-outline:hover {
+  background: #171100;
+  color: #fff;
+}
+
+.pricing-card .btn-primary {
+  background: var(--primary-color);
+  color: #171100;
+}
+
+/* ================= Course Tabs ===================== */
+.course-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.course-tabs .tab-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid #e2dfda;
+  background: transparent;
+  font-size: 1.6rem;
+  color: #5f5b53;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.course-tabs .tab-btn:hover,
+.course-tabs .tab-btn.active {
+  background: #171100;
+  color: #fff;
+  border-color: #171100;
+}
+
+.course-item.hidden {
+  display: none;
 }
 
 /* ================= Responsive ================= */

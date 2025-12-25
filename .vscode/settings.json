@@ -3,5 +3,6 @@
   "editor.wordWrap": "on",
   "files.associations": {
     "*.html": "html"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
