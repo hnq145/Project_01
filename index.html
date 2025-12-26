@@ -20,11 +20,21 @@
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/custom_additions.css">
 
     <title>Education Platform Website-Lesson</title>
 </head>
 
 <body>
+    <!-- Promo Bar -->
+    <div class="promo-bar" id="promo-bar">
+        <p>🎉 <strong>Special Offer:</strong> Get 50% Off Premium Plan - Limited Time Only! <a href="#pricing">Claim Now</a></p>
+        <button class="promo-close" id="promo-close">&times;</button>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
@@ -60,7 +70,20 @@
                 </nav>
 
                 <!-- btn action -->
-                <div class="action"><a href="#!" class="btn btn-sign-up" data-aos="fade-right">Sign Up</a></div>
+                <div class="action">
+                    <button class="theme-toggle" title="Toggle Dark Mode">
+                        <!-- Sun Icon -->
+                        <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <a href="#!" class="btn btn-sign-up" data-aos="fade-right">Sign Up</a>
+                </div>
             </div>
         </div>
     </header>
@@ -153,6 +176,22 @@
 
             </div>
 
+        </div>
+
+        <!-- Partners -->
+        <div class="partners">
+            <div class="main-content">
+                <p class="desc">Trusted by 5,000+ Companies Worldwide</p>
+                <div class="list">
+                    <!-- Using text placeholders for logos since we don't have images ready -->
+                    <h3 class="partner-logo">Google</h3>
+                    <h3 class="partner-logo">Netflix</h3>
+                    <h3 class="partner-logo">Airbnb</h3>
+                    <h3 class="partner-logo">Amazon</h3>
+                    <h3 class="partner-logo">Facebook</h3>
+                    <h3 class="partner-logo">Grab</h3>
+                </div>
+            </div>
         </div>
 
         <!-- Popular -->
@@ -1003,6 +1042,16 @@
 
     <!-- jQuery -->
      <script src="./jquery-3.7.1/jquery-3.7.1.js"></script>
+
+    <!-- Video Modal -->
+    <div class="modal-video">
+        <div class="modal-video-inner">
+            <div class="modal-iframe">
+                <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button class="modal-close">&times;</button>
+        </div>
+    </div>
 
     <!-- Custom Script -->
     <script src="main.js"></script>
